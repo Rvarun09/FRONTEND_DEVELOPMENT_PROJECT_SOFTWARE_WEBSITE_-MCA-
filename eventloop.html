@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fetch API Example</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+button {
+margin: 5px;
+padding: 10px 15px;
+border: none;
+background-color: lightblue;
+cursor: pointer;
+border-radius: 5px;
+}
+button:hover {
+
+background-color: deepskyblue;
+color: white;
+}
+pre {
+background-color: #f4f4f4;
+padding: 10px;
+border-radius: 5px;
+overflow-x: auto;
+}
+</style>
+</head>
+<body>
+<h1>fetching api</h1>
+
+<button onclick="getUsers()">GET Users</button>
+<button onclick="createUser()">POST User</button>
+<button onclick="updateUser()">PUT User</button>
+<button onclick="deleteUser()">DELETE User</button>
+
+<h2>Output:</h2>
+<pre id="output"></pre>
+
+<script>
+
+const baseURL = 'https://jsonplaceholder.typicode.com/users';
+const output = document.getElementById('output');
+
+
+function getUsers() {
+fetch(baseURL)
+.then(res => res.json())
+.then(data => {
+console.log('GET:', data);
+output.textContent = JSON.stringify(data, null, 2);
+})
+.catch(err => console.error('Error (GET):', err));
+}
+
+
+function createUser() {
+fetch(baseURL, {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+
+body: JSON.stringify({
+name: 'akshay',
+username: 'akshay01',
+email: 'akshaygulati@gmail.com'
+})
+})
+.then(res => res.json())
+.then(data => {
+console.log('POST:', data);
+output.textContent = JSON.stringify(data, null, 2);
+})
+.catch(err => console.error('Error (POST):', err));
+}
+
+
+function updateUser() {
+fetch(`${baseURL}/1`, {
+method: 'PUT',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({
+name: 'varun',
+
+username: 'varun01',
+email: 'varun09081@gmail.com'
+})
+})
+.then(res => res.json())
+.then(data => {
+console.log('PUT:', data);
+output.textContent = JSON.stringify(data, null, 2);
+})
+.catch(err => console.error('Error (PUT):', err));
+}
+
+
+function deleteUser() {
+fetch(`${baseURL}/1`, { method: 'DELETE' })
+.then(res => {
+if (res.ok) {
+console.log('DELETE: User deleted');
+output.textContent = 'User deleted successfully';
+} else {
+console.log('DELETE: Error deleting user');
+
+output.textContent = 'Error deleting user';
+}
+})
+.catch(err => console.error('Error (DELETE):', err));
+}
+</script>
+</body>
+</html>

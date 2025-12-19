@@ -16,6 +16,7 @@
                 <li><a href="#about">Profile</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#careers">Careers</a></li>
+                <li><a href="login.html" class="btn" style="padding: 5px 15px; margin-left: 10px;">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -72,32 +73,8 @@
         <section id="team" class="container">
             <h2 class="section-title">Meet Our Team Members</h2>
             <p class="section-subtitle">The driving force behind our innovation and success.</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="" alt="">
-                    <h3>Gurjot Singh</h3>
-                    <p>Chief Executive Officer</p>
-                </div>
-                <div class="team-member">
-                    <img src="" alt="">
-                    <h3>Kumar varun</h3>
-                    <p>Designing</p>
-                </div>
-                <div class="team-member">
-                    <img src="" alt="">
-                    <h3>Gaurish Gutam</h3>
-                    <p>Frotend Developer</p>
-                </div>
-                <div class="team-member">
-                    <img src="" alt="">
-                    <h3>Akshay Gulati</h3>
-                    <p>Website Architect</p>
-                </div>
-                <div class="team-member">
-                    <img src="" alt="">
-                    <h3>Rahul Prashar</h3>
-                    <p>UI/UX Designer</p>
-                </div>
+            <div class="team-grid" id="team-container">
+
             </div>
         </section>
 
@@ -252,19 +229,11 @@
         }
 
         window.addEventListener('scroll', changeNavOnScroll);
-        
-        // --- Form Submission Simulation ---
-        const form = document.getElementById('job-application-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the form from actually submitting
-            
-            const fullName = document.getElementById('fullName').value;
-           alert(`Thank you, ${fullName}! Your application has been received. We will get back to you shortly.`);
-
-            form.reset();
-        });
 
     </script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
 
