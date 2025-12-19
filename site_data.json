@@ -1,0 +1,46 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "akshay gulati",
+      "role": "Founder & CEO",
+      "image": "https://robohash.org/1?set=set5"
+    },
+    {
+      "id": 2,
+      "name": "gurjot singh",
+      "role": "Security Engineer",
+      "image": "https://robohash.org/2?set=set5"
+    },
+    {
+      "id": 3,
+      "name": "kumar varun",
+      "role": "Developer",
+      "image": "https://robohash.org/3?set=set5"
+    },
+    {
+      "id": 4,
+      "name": "gaurish gautam",
+      "role": "UI/UX Designer",
+      "image": "https://robohash.org/4?set=set5"
+    },
+    {
+        "id": 5,
+        "name": "rahul prashar",
+        "role": "Marketing Head",
+        "image": "https://robohash.org/5?set=set5"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@techco.com",
+      "password": "123",
+      "name": "Super Admin"
+    },
+    {
+      "email": "guest@techco.com",
+      "password": "abc",
+      "name": "Guest User"
+    }
+  ]
+}

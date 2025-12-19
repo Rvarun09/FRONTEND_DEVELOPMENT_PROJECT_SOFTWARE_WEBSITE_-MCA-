@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form onsubmit="return validateForm()">
+
+  <label>Username:</label>
+  <input type="text" id="username"><br><br>
+
+  <label>Email:</label>
+  <input type="text" id="email"><br><br>
+
+  <label>Password:</label>
+  <input type="password" id="password"><br><br>
+
+  <label>Phone:</label>
+  <input type="text" id="phone"><br><br>
+
+  <label>Pincode:</label>
+  <input type="text" id="pincode"><br><br>
+
+  <label>Destination:</label>
+  <input type="text" id="destination"><br><br>
+
+  <label>Description:</label>
+  <textarea id="description"></textarea><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+
+  const username = document.getElementById("username").value;
+  const email    = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const phone    = document.getElementById("phone").value;
+  const pincode  = document.getElementById("pincode").value;
+
+  const userRegex = /^[a-zA-Z0-9_]{3,15}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passRegex = /^.{6,}$/;
+  const phoneRegex = /^[0-9]{10}$/;
+  const pinRegex = /^[0-9]{6}$/;
+
+  if (!userRegex.test(username)) {
+    alert("Invalid username");
+    return false;
+  }
+
+  if (!emailRegex.test(email)) {
+    alert("Invalid email");
+    return false;
+  }
+
+  if (!passRegex.test(password)) {
+    alert("Password must be at least 6 characters");
+    return false;
+  }
+
+  if (!phoneRegex.test(phone)) {
+    alert("Phone must be 10 digits");
+    return false;
+  }
+
+  if (!pinRegex.test(pincode)) {
+    alert("Pincode must be 6 digits");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+  return true;
+}
+</script>
+
+</body>
+</html>
